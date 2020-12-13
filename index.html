@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <style>
+        #main{
+            position: absolute;
+            left: 33%;
+            top: 2%;
+            width: 450px;
+            height: 600px;
+            border: 10px solid rgb(6, 33, 85);
+        }
+        h2{
+            position: absolute;
+            left: 30%;
+        }
+        #align{
+            position: absolute;
+            left: 19%;
+            top: 20%;
+            font-size: 25px;
+        }
+        #align2{
+            position: absolute;
+            left: 19%;
+            top: 32%;
+            font-size: 25px;  
+        }
+        #button{
+            position: absolute;
+            top: 43%;
+            left: 36%;
+            font-size: 20px;
+            width: 120px;
+            height: 60px;
+        }
+        #output{
+            position: absolute;
+            top:55%;
+            left: 25%;
+            font-size: 35px;
+        }
+        #info{
+            position: absolute;
+            top: 75%;
+            left: 25%;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div id="main">
+              <h2>BMI Calculator</h2>
+              <br>
+              <br>
+              <br>
+              <span id="align"><span> Weight In Kg : </span><input type="number" id="kilo" placeholder="Enter weight ( In kg)"></span>
+              <span id="align2"><span> Height In cm : </span><input type="number" id="height" placeholder="Enter Height ( In cm)"></span>
+              <button id="button" type="button" onclick="calculate()">Calculate</button>
+              <p id="output">output here</p>
+              <div id="info">
+                <span>BMI GUIDE</span>
+                <br>
+                <br>
+                <div>
+                    under weight = less than 18.6
+                    <br>
+                    <br>
+                    Normal range = 18.6 and 24.9
+                    <br>
+                    <br>
+                   Overweight = greater than 24.9
+                </div>
+             </div>
+        </div>
+    </div>
+</body>
+<script>
+    let kilo = document.getElementById("kilo");
+    let height = document.getElementById("height");
+    let output = document.getElementById("output");
+
+    function calculate(){
+        let y = height.value*height.value/10000;
+        let x = kilo.value/y;
+        output.innerHTML = x;
+        if(!kilo.value||kilo.value === NaN||!height.value||height.value === NaN){
+            output.innerHTML = "pls enter valid input";
+        }
+    }
+</script>
+</html>
